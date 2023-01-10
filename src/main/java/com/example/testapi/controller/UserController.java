@@ -6,11 +6,14 @@ import com.example.testapi.common.SaveParam;
 import com.example.testapi.dao.UserDao;
 import com.example.testapi.model.User;
 import com.github.javafaker.Faker;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
 
@@ -44,7 +47,7 @@ public class UserController {
 
     @PostMapping("TestRequest")
     @ResponseBody
-    public Object testRequest(User  user, @RequestParam Map<  String,Object> map){
+    public Object testRequest(User  user, @RequestParam Map<String,Object> map){
         Optional.ofNullable(map.get("proj")).ifPresent(t->{
             List<Long> longs = Convert.toList(Long.class, t);
             if (longs.size()>0){
@@ -63,4 +66,16 @@ public class UserController {
         return "TestSave";
     }
 
+    @PostMapping("TestList")
+    @ResponseBody
+    public Object testList(@RequestParam(value = "taskPhids") String taskPhids) {
+        HashMap<String, String> result = new HashMap<>();
+        String[] arr = StringUtils.substringsBetween(taskPhids, "[", "]");
+        List<String> s = Arrays.asList(arr);
+        s.forEach(t -> {
+            List<String> list = Arrays.asList(t.split(","));
+            result.put(list.get(0), "value");
+        });
+        return result;
+    }
 }
