@@ -23,6 +23,7 @@ public class UserDaoImpl implements UserDao {
             userInfo.setCity(fakerWithCN.address().city());
             userInfo.setStreet(fakerWithCN.address().streetAddress());
             userInfo.setUniversityName(fakerWithCN.university().name());
+            userInfo.setCName(fakerWithCN.funnyName().name());
             userList.add(userInfo);
         }
     }
