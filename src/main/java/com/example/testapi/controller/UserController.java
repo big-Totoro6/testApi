@@ -58,6 +58,13 @@ public class UserController {
         return "TestRequest";
     }
 
+    @PostMapping("TestLocalDataTime")
+    @ResponseBody
+    public Object testLocalDataTime(User  user){
+        System.out.println(user.getExpireTime());
+        return "testLocalDataTime";
+    }
+
     /**
      * 测试JsonAnyGetter
      * @param user
