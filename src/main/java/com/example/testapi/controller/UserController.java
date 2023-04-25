@@ -58,6 +58,18 @@ public class UserController {
         return "TestRequest";
     }
 
+    /**
+     * 测试JsonAnyGetter
+     * @param user
+     * @return
+     */
+    @PostMapping("TestJsonRow")
+    @ResponseBody
+    public Object testJsonRow(@RequestBody User  user){
+        System.out.println(user.toString());
+        return "TestJsonRow";
+    }
+
     @PostMapping("TestSave")
     @ResponseBody
     public Object testSave(@SaveParam SaveData data){
