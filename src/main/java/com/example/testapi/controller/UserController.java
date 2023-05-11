@@ -97,4 +97,17 @@ public class UserController {
         });
         return result;
     }
+
+    @PostMapping("TestRequestBodyList")
+    @ResponseBody
+    public Object testRequestBodyList(@RequestBody List<Long> taskPhids) {
+        taskPhids.forEach(System.out::println);
+        return taskPhids;
+    }
+
+    @PostMapping("TestRequestBodyPhidList")
+    @ResponseBody
+    public Object testRequestBodyPhidList(@RequestBody Long taskPhids) {
+        return taskPhids;
+    }
 }
