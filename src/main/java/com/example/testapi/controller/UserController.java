@@ -1,6 +1,7 @@
 package com.example.testapi.controller;
 
 import cn.hutool.core.convert.Convert;
+import com.example.testapi.common.DiyLog;
 import com.example.testapi.common.SaveData;
 import com.example.testapi.common.SaveParam;
 import com.example.testapi.dao.UserDao;
@@ -25,6 +26,7 @@ public class UserController {
 
     @GetMapping("getUserList")
     @ResponseBody
+    @DiyLog
     public  Object getUserList(){
         List<User> users = userDao.findAll();
         HashMap<String, Object> result = new HashMap<>();
