@@ -24,6 +24,7 @@ public class UserController {
     @Autowired
     private UserDao userDao;
 
+
     @GetMapping("getUserList")
     @ResponseBody
     @DiyLog
