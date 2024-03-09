@@ -21,9 +21,36 @@ import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
 @Controller
 @RequestMapping("/User/")
 public class UserController {
+    /**
+     * 注解注入 最常見
+     * 知识点
+     * 使用 @Autowired 注解标记的 setUserDAO() 方法将会按照 byType 方式注入 UserDAO 类型的 bean。
+     *
+     * 然而，如果有多个符合条件的 bean（即多个 UserDAO 类型的 bean），Spring 将会抛出异常，
+     * 因为无法确定要注入哪个 bean。这时候，你需要使用 @Qualifier 注解来指定具体要注入的 bean，或者使用 byName 方式。
+     * @return
+     */
     @Autowired
     private UserDao userDao;
 
+    /**
+     * 构造器注入
+     */
+//    private UserDao userDao;
+//    public UserController(UserDao userDao){
+//        this.userDao=userDao;
+//    }
+
+    /**
+     * setter注入
+     * 必须加@Autowired
+     * @return
+     */
+//    private UserDao userDao;
+//    @Autowired
+//    public void setUserDao(UserDao userDao){
+//        this.userDao=userDao;
+//    }
 
     @GetMapping("getUserList")
     @ResponseBody
