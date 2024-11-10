@@ -45,6 +45,7 @@ public class QueryGrantTypeService {
 
     /**
      * 使用map+函数式接口  i do some change
+     * feat：假设这是一个不需要提交到master的内容
      */
 
     @Autowired

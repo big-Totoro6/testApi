@@ -6,6 +6,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class GrantTypeSerive {
 
+    /**
+     * feat：假设这是一个不需要提交到master的内容
+     * @param resourceId
+     * @return
+     */
     public String redPaper(String resourceId){
         //红包的发放方式
         return "每周末9点发放";
