@@ -44,7 +44,7 @@ public class QueryGrantTypeService {
 //    }
 
     /**
-     * 使用map+函数式接口
+     * 使用map+函数式接口  i do some change
      */
 
     @Autowired
