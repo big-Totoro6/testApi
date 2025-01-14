@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 设置日志级别为DEBUG，日志输出到控制台 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- 日志输出格式 -->
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss}|%level|%X{trackId}|%thread|${PID:- }:%logger{0}:%L|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- 设置日志级别为INFO，日志输出到文件 -->
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>logs/application.log</file>
+        <encoder>
+            <!-- 配置日志输出格式 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 根日志级别配置 -->
+    <root level="INFO">
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+    </root>
+
+</configuration>
