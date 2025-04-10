@@ -3,3 +3,11 @@ server:
 logging:
   level:
     com.example.testapi: trace
+
+jason:
+  config:
+    name: jason
+
+jasonProperty:
+  config:
+    name: jasonProperty

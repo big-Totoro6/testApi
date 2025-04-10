@@ -1,5 +1,6 @@
 package com.example.testapi;
 
+import com.example.testapi.common.utils.CommonUtils;
 import com.example.testapi.service.impl.AopServiceImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -49,5 +50,9 @@ class TestApiApplicationTests {
         aopService.printAop();
     }
 
+    @Test
+    void testConfig(){
+        CommonUtils.iWillGetConfigFromConfig();
+    }
 
 }
